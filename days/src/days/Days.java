@@ -16,17 +16,32 @@ import java.util.Scanner;
  * @author Ravee
  */
 public class Days {
+     public enum Day {
+        MONDAY("Monday"),
+        TUESDAY("Tuesday"),
+        WEDNESDAY("Wednesday"),
+        THURSDAY("Thursday"),
+        FRIDAY("Friday"),
+        SATURDAY("Saturday"),
+        SUNDAY("Sunday");
 
-    /**
-     * @param args the command line arguments
-     */
+        private final String name;
+
+        Day(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
     public static void main(String[] args) {
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }    // TODO code application logic here
-    
-    
+        Day[] daysOfWeek = Day.values();
+        for (Day day : daysOfWeek) {
+            System.out.println(day.getName());
+        }
+    }
 }
+
+
